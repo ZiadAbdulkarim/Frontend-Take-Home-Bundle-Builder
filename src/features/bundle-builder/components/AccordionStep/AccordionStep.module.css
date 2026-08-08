@@ -1,0 +1,173 @@
+/* =========================================================
+   AccordionStep — matches Figma design (Frame Figma2)
+   ========================================================= */
+
+/* ---- Container ---- */
+.step {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-overlay);
+  overflow: hidden;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.step.open {
+  border-color: var(--color-border-subtle);
+  background: #EDF4FF; /* Light blue tint fill matching Desktop Figma */
+}
+
+/* ---- Header button ---- */
+.header {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 14px 24px 14px;
+  cursor: pointer;
+  text-align: left;
+  gap: 10px;
+}
+
+.header:hover {
+  background: rgba(0, 0, 0, 0.02);
+  transition: background var(--transition-fast);
+}
+
+.open .header {
+  background: transparent;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.headerDivider {
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+.mainRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.headingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Step icon — 24×24 image */
+.iconWrap {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+  line-height: 1.2;
+}
+
+/* ---- Right: meta (count + chevron) ---- */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Count text matching Figma */
+.countBadge {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary-700);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Chevron SVG — rotates 180° when open */
+.chevronIcon {
+  color: var(--color-primary-700);
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ---- Body (expanded content) ---- */
+.body {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: transparent;
+}
+
+/* ---- Next button (Centered Rounded Rectangle matching Figma) ---- */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.nextButton {
+  border: 1.5px solid var(--color-primary-700);
+  border-radius: var(--radius-md); /* Rounded rectangle 8px radius, NOT pill */
+  background: transparent;
+  color: var(--color-primary-700);
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.nextButton:hover {
+  background: var(--color-primary-700);
+  color: var(--color-text-on-primary);
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .nextButton {
+    min-width: 220px;
+    padding: 12px 32px;
+  }
+}

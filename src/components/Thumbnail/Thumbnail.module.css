@@ -1,0 +1,15 @@
+.thumb {
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.sm {
+  width: 40px;
+  height: 40px;
+}
+
+.md {
+  width: 56px;
+  height: 56px;
+}
+

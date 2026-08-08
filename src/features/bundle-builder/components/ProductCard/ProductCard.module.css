@@ -1,0 +1,192 @@
+/* =========================================================
+   ProductCard — Horizontal layout matching Frame Figma1
+   ========================================================= */
+
+/* ---- Card shell ---- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: row;          /* HORIZONTAL: image | content */
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-overlay);
+  box-sizing: border-box;
+  height: 100%;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.selected {
+  border-color: var(--color-primary-700);
+  box-shadow: 0 0 0 1px var(--color-primary-700);
+}
+
+/* ---- Discount badge — absolute top-left, over image column ---- */
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--color-primary-700);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  padding: 3px 7px;
+  border-radius: var(--radius-pill);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* ---- LEFT: image column ---- */
+.imageCol {
+  width: 120px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px; /* push below badge */
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* ---- RIGHT: content column ---- */
+.contentCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+/* ---- Title block ---- */
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.description {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.link {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-700);
+  text-decoration: underline;
+  display: inline;
+  margin-left: 2px;
+}
+
+.link:hover {
+  color: var(--color-primary-900);
+}
+
+/* ---- Variant chips: [thumbnail] Label ---- */
+.variantRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px 3px 4px;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.chip:hover {
+  border-color: var(--color-success-500);
+}
+
+.chipActive {
+  border-color: var(--color-success-600);
+  background: #EBF7F4;
+}
+
+/* Thumbnail inside chip — small product image */
+.chipThumb {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+/* Fallback swatch circle (no image) */
+.chipSwatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-default);
+  flex-shrink: 0;
+}
+
+.chipLabel {
+  color: var(--color-text-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+}
+
+.chipActive .chipLabel {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* ---- Footer: stepper left, price right ---- */
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+/* ---- Price block: compare (strikethrough) stacked above active price ---- */
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.comparePrice {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-danger-600);
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1;
+}

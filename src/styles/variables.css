@@ -1,0 +1,89 @@
+/* =========================================================
+   DESIGN SYSTEM — Security System Builder
+   Extracted from provided UI screenshots (Frontend Test Figma)
+   ========================================================= */
+
+:root {
+
+  /* ---------- 1. BRAND / PRIMARY (Purple) ----------
+     Used for: primary buttons, selected states, badges,
+     bold discounted prices, links, active borders          */
+  --color-primary-900:   #3A20A8; /* pressed / active */
+  --color-primary-700:   #4E2FD2; /* MAIN BRAND COLOR — buttons, badges, prices */
+  --color-primary-600:   #6449D8; /* hover state */
+  --color-primary-500:   #7660DD; /* secondary button border / icons */
+  --color-primary-400:   #8A79E3; /* disabled-primary / muted accents */
+  --color-primary-200:   #B1AAEE; /* subtle accents, focus rings */
+  --color-primary-100:   #DED8F6; /* badge tint */
+  --color-primary-50:    #E9E5FA; /* pale surface */
+  --color-primary-25:    #EDF4FF; /* PANEL / SELECTED-CARD BACKGROUND (review sidebar, selected item fill) */
+
+  /* ---------- 2. SEMANTIC COLORS ---------- */
+  --color-success-600:   #0AA288; /* "Congrats! You're saving..." success/savings text */
+  --color-success-500:   #26AC97;
+  --color-success-100:   #D0EAF0;
+
+  --color-danger-600:    #DD5245; /* strikethrough / original price, "Save %" emphasis */
+  --color-danger-100:    #F7DAD7;
+
+  /* ---------- 3. NEUTRALS / TEXT ---------- */
+  --color-text-primary:    #0B0D10; /* product names, strong headings */
+  --color-text-heading:    #1F1F1F; /* section titles e.g. "Your security system" */
+  --color-text-secondary:  #6F7882; /* descriptions, price strikethrough gray */
+  --color-text-muted:      #86898F; /* eyebrow labels e.g. "STEP 1 OF 4" */
+  --color-text-disabled:   #A0A4AB;
+  --color-text-on-primary: #FFFFFF; /* text on filled purple buttons */
+
+  /* ---------- 4. SURFACES / BACKGROUNDS ---------- */
+  --color-surface-page:      #FFFFFF; /* app / card background */
+  --color-surface-panel:     #EDF4FF; /* light lavender section (review card, accordion body) */
+  --color-surface-muted:     #F5F6F8; /* stepper buttons, inputs */
+  --color-surface-overlay:   #FFFFFF;
+
+  /* ---------- 5. BORDERS / DIVIDERS ---------- */
+  --color-border-default:  #E1E4E8; /* unselected card / input border */
+  --color-border-subtle:   #D3D9E3; /* divider lines between accordion steps */
+  --color-border-strong:   #DAE1EA;
+  --color-border-selected: var(--color-primary-700); /* active/selected card outline */
+
+  /* ---------- 6. TYPOGRAPHY ---------- */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-size-xs:   12px; /* eyebrow labels, tips */
+  --font-size-sm:   14px; /* body / descriptions */
+  --font-size-md:   16px; /* product names, buttons */
+  --font-size-lg:   20px; /* section titles */
+  --font-size-xl:   28px; /* page headline ("Let's get started!") */
+
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --line-height-tight:  1.2;
+  --line-height-normal: 1.5;
+
+  /* ---------- 7. RADIUS ---------- */
+  --radius-sm:   6px;  /* qty steppers, checkboxes, color swatches */
+  --radius-md:   8px;  /* cards, inputs */
+  --radius-lg:   12px; /* section/accordion containers */
+  --radius-pill: 999px; /* "Save 22%" badges, "as low as" tag */
+
+  /* ---------- 8. SPACING ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+
+  /* ---------- 9. SHADOW ---------- */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --shadow-focus: 0 0 0 3px var(--color-primary-200);
+
+  /* ---------- 10. MOTION ---------- */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+}

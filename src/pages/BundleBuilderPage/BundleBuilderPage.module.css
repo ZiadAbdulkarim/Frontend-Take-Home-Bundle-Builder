@@ -1,0 +1,152 @@
+/* =========================================================
+   BundleBuilderPage — Layout matching Desktop, Tablet & Mobile Figma
+   ========================================================= */
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FAFCFF 0%, #F4F7FC 100%);
+  padding: 40px 32px;
+}
+
+/* Two-column responsive shell */
+.shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+}
+
+.builder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.hero {
+  margin-bottom: 4px;
+}
+
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Product Cards Grid inside open step: 2 columns on desktop */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* If final row contains only 1 card, center it horizontally in the 2-column grid */
+.cardsGrid > *:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 8px);
+}
+
+/* Sticky Review Panel Sidebar on Desktop */
+.sidebar {
+  position: sticky;
+  top: 24px;
+  min-width: 0;
+}
+
+/* =========================================================
+   Responsive Breakpoints
+   ========================================================= */
+
+/* Tablet View (Stacked layout: Builder on top, Review Panel below) */
+@media (max-width: 1024px) {
+  .page {
+    padding: 32px 24px;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .builder {
+    gap: 24px;
+  }
+
+  .hero {
+    margin-bottom: 8px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 640px) {
+  .page {
+    padding: 20px 16px;
+  }
+
+  .shell {
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  /* Horizontal scrolling cards row on small mobile viewports */
+  .cardsGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    margin: 0 -16px;
+    padding: 4px 16px 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cardsGrid > * {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+
+  .cardsGrid > *:last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: auto;
+    width: auto;
+  }
+}
